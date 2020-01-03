@@ -39,15 +39,15 @@ public class Manager extends Employee {
 		String choice,input;
 		
 		do {
-		System.out.println("1.Ξ£Ο…Ξ½ΞΏΞ»ΞΉΞΊΞ¬ ΞΊΞ­Ο�Ξ΄Ξ· ΞµΟ€ΞΉΟ‡ΞµΞ―Ο�Ξ·ΟƒΞ·Ο‚");
-		System.out.println("2.Ξ‘Ξ»Ξ»Ξ±Ξ³Ξ® Ο€ΞΏΟƒΞΏΟ� Ξ�Ο€Ο�Ξ½ΞΏΟ…Ο‚");
-		System.out.println("3.Ξ‘Ο€Ο�Ξ΄ΞΏΟƒΞ· Ο…Ο€Ξ±Ξ»Ξ»Ξ®Ξ»Ο‰Ξ½");
-		System.out.println("4.Ξ�ΞΉΟƒΞΈΞΏΞ― ΞΊΞ±ΞΉ Ξ�Ο€Ο�Ξ½ΞΏΟ…Ο‚ Ο€Ο‰Ξ»Ξ·Ο„Ο�Ξ½");
-		System.out.println("5.Ξ¤Ο�ΞµΞΉΟ‚ ΞΊΞ±Ξ»Ο�Ο„ΞµΟ�ΞΏΞΉ Ο€Ο‰Ξ»Ξ·Ο„Ξ­Ο‚");
-		System.out.println("6.Ξ•Ξ³Ξ³Ο�Ξ±Ο†Ξ® Ξ½Ξ­ΞΏΟ… Ο€Ο‰Ξ»Ξ·Ο„Ξ®");
-		System.out.print("-->");
-		choice = sc.nextLine();
-		System.out.println();
+			System.out.println("1.Συνολικά κέρδη επιχείρησης");
+			System.out.println("2.Αλλαγή ποσού Μπόνους");
+			System.out.println("3.Απόδοση υπαλλήλων");
+			System.out.println("4.Μισθοί και Μπόνους πωλητών");
+			System.out.println("5.Τρεις καλύτεροι πωλητές");
+			System.out.println("6.Εγγραφή νέου πωλητή");
+			System.out.print("-->");
+			choice = sc.nextLine();
+			System.out.println();
 		
 			switch(choice) {
 			case "1" :
