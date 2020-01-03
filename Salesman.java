@@ -50,49 +50,49 @@ public class Salesman extends Employee{
 		String choice,input;
 		
 		do {
-		System.out.println("1.Ξ Ο�ΞΏΟƒΟ‰Ο€ΞΉΞΊΞ® Ξ±Ο€Ο�Ξ΄ΞΏΟƒΞ·");
-		System.out.println("2.Ξ�ΞΉΟƒΞΈΟ�Ο‚ ΞΊΞ±ΞΉ Ξ�Ο€Ο�Ξ½ΞΏΟ…Ο‚");
-		System.out.println("3.Ξ ΞµΞ»Ξ±Ο„ΞΏΞ»Ο�Ξ³ΞΉΞΏ");
-		System.out.println("4.Ξ•Ξ³Ξ³Ο�Ξ±Ο†Ξ® Ξ½Ξ­ΞΏΟ… Ο€ΞµΞ»Ξ¬Ο„Ξ·");
-		System.out.print("-->");
-		choice = sc.nextLine();
-		System.out.println();
+			System.out.println("1.Προσωπική απόδοση");
+			System.out.println("2.Μισθός και Μπόνους");
+			System.out.println("3.Πελατολόγιο");
+			System.out.println("4.Εγγραφή νέου πελάτη");
+			System.out.print("-->");
+			choice = sc.nextLine();
+			System.out.println();
 		
 			switch(choice) {
 				case "1":
-					System.out.println("H Ο€Ο�ΞΏΟƒΟ‰Ο€ΞΉΞΊΞ® ΟƒΞ±Ο‚ Ξ±Ο€Ο�Ξ΄ΞΏΟƒΞ·: " + Efficiency());
+					System.out.println("H προσωπική σας απόδοση: " + Efficiency());
 				case "2":
-					/*System.out.println("Ξ� ΞΌΞΉΟƒΞΈΟ�Ο‚ ΟƒΞ±Ο‚ ΞµΞ―Ξ½Ξ±ΞΉ: " + SalesmanProfit() +
-							" ΞΊΞ±ΞΉ Ο„ΞΏ ΟƒΟ…Ξ½ΞΏΞ»ΞΉΞΊΟ� ΟƒΞ±Ο‚ ΞΌΟ€Ο�Ξ½ΞΏΟ…Ο‚: " + ExtraSalary());*/
+					/*System.out.println("Ο μισθός σας είναι: " + SalesmanProfit() +
+							" και το συνολικό σας μπόνους: " + ExtraSalary());*/
 					System.out.println("Ο μισθός σας είναι: " + getSalary() +
 							"και το συνολικό σας μπόνους: " + ExtraSalary());
 				case "3":
-					System.out.println("Ξ Ξ•Ξ›Ξ‘Ξ¤Ξ�Ξ›Ξ�Ξ“Ξ™Ξ�");
+					System.out.println("ΠΕΛΑΤΟΛΟΓΙΟ");
 					for (Client cli : clients) {
 						System.out.println(cli.getName() + " " + cli.getLastName());
 					}
 				case "4":
-					System.out.print("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„ΞΏ Ο�Ξ½ΞΏΞΌΞ± Ο„ΞΏΟ… Ο€ΞµΞ»Ξ¬Ο„Ξ·: ");
+					System.out.print("Εισάγετε το όνομα του πελάτη: ");
 					String name = sc.nextLine();
-					System.out.print("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„ΞΏ ΞµΟ€Ο�Ξ½Ο…ΞΌΞΏ Ο„ΞΏΟ… Ο€ΞµΞ»Ξ¬Ο„Ξ·: ");
+					System.out.print("Εισάγετε το επώνυμο του πελάτη: ");
 					String lastName = sc.nextLine();
-					System.out.print("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„Ξ·Ξ½ Ξ·Ξ»ΞΉΞΊΞ―Ξ± Ο„ΞΏΟ… Ο€ΞµΞ»Ξ¬Ο„Ξ·: ");
+					System.out.print("Εισάγετε την ηλικία του πελάτη: ");
 					int age = sc.nextInt();
-					System.out.print("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„Ξ·Ξ½ Ξ΄ΞΉΞµΟ�ΞΈΟ…Ξ½ΟƒΞ·  Ο„ΞΏΟ… Ο€ΞµΞ»Ξ¬Ο„Ξ·: ");
+					System.out.print("Εισάγετε την διεύθυνση  του πελάτη: ");
 					String address = sc.nextLine();
 					String id;
 					ArrayList<Integer[][]> temp = new ArrayList();
 					do {
-						System.out.println("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„ΞΏ id Ο„Ξ·Ο‚ Ξ±ΟƒΟ†Ξ¬Ξ»ΞµΞΉΞ±Ο‚: ");
+						System.out.println("Εισάγετε το id της ασφάλειας: ");
 						id = sc.nextLine();
-						if (id.equals("")) {		//enter Ξ³ΞΉΞ± Ξ½Ξ± ΟƒΟ„Ξ±ΞΌΞ±Ο„Ξ®ΟƒΞµΞΉ Ξ½Ξ± ΞµΞΉΟƒΞ¬Ξ³ΞµΞΉ Ξ±ΟƒΟ†Ξ¬Ξ»ΞµΞΉΞµΟ‚
+						if (id.equals("")) {		//enter για να σταματήσει να εισάγει ασφάλειες
 							break;
 						} else {
 							String duration;
 							do {
-								System.out.println("Ξ•ΞΉΟƒΞ¬Ξ³ΞµΟ„Ξµ Ο„Ξ· Ξ΄ΞΉΞ¬Ο�ΞΊΞµΞΉΞ± Ο„Ξ·Ο‚ Ξ±ΟƒΟ†Ξ¬Ξ»ΞµΞΉΞ±Ο‚: ");
+								System.out.println("Εισάγετε τη διάρκεια της ασφάλειας: ");
 								duration = sc.nextLine();
-								if (id.equals("")) {		//enter Ξ³ΞΉΞ± Ξ½Ξ± ΟƒΟ„Ξ±ΞΌΞ±Ο„Ξ®ΟƒΞµΞΉ Ξ½Ξ± ΞµΞΉΟƒΞ¬Ξ³ΞµΞΉ Ξ±ΟƒΟ†Ξ¬Ξ»ΞµΞΉΞµΟ‚
+								if (id.equals("")) {		//enter για να σταματήσει να εισάγει ασφάλειες
 									break;
 								} else {
 									Integer[][] tempArray = {{Integer.parseInt(id), Integer.parseInt(duration)}};
@@ -110,7 +110,7 @@ public class Salesman extends Employee{
 		
 	}
 
-	//Ξ�Ξ­Ο�Ξ΄Ξ· Ξ±Ξ½Ξ¬ Ο€Ο‰Ξ»Ξ·Ο„Ξ®
+	//Κέρδη ανά πωλητή
 	public double SalesmanProfit() {
 		double sum = 0;
 		for(int i = 0; i < clients.size(); i++) {
@@ -119,7 +119,7 @@ public class Salesman extends Employee{
 		return sum;
 	}
 
-	//Ξ£Ο…Ξ½ΞΏΞ»ΞΉΞΊΞ¬ ΞΊΞ­Ο�Ξ΄Ξ· ΞµΟ€ΞΉΟ‡ΞµΞ―Ο�Ξ·ΟƒΞ·Ο‚
+	//Συνολικά κέρδη επιχείρησης
 	public static double TotalProfit() {
 		double sum = 0;
 		for(int i = 0; i < employee.size(); i++) {
@@ -130,18 +130,18 @@ public class Salesman extends Employee{
 		return sum;
 	}
 
-	//Ξ‘Ο€ΞΏΞ΄ΞΏΟ„ΞΉΞΊΟ�Ο„Ξ·Ο„Ξ± 
+	//Αποδοτικότητα 
 	public double Efficiency() {
 		return this.SalesmanProfit() / TotalProfit();
 		
 	}
 
-	//Ξ�Ο€Ο�Ξ½ΞΏΟ…Ο‚ Ξ±Ξ½Ξ± Ξ Ο‰Ξ»Ξ·Ο„Ξ® (Ξ±Ο€ΞΏ Ο„ΞΏ ΟƒΟ…Ξ½ΞΏΞ»ΞΉΞΊΞΏ ΞΌΟ€Ξ±Ο„Ξ¶ΞµΟ„)
+	//Μπόνους ανα Πωλητή (απο το συνολικο μπατζετ)
 	public double Bonus() {
 		return this.Efficiency() * Manager.getBudget();
 	}
 
-	//Ξ Ο�ΞΏΞΌΞ·ΞΈΞµΞΉΞ± Ξ±Ξ½Ξ± Ξ Ο‰Ξ»Ξ·Ο„Ξ®
+	//Προμηθεια ανα Πωλητή
 	public double Commission() {
 		double sum = 0;
 		for(int i = 0; i < clients.size(); i++) {
@@ -157,7 +157,7 @@ public class Salesman extends Employee{
 		return sum;
 	}
 
-	//Ξ£Ο…Ξ½ΞΏΞ»ΞΉΞΊΟ� Ξ�Ο€Ο�Ξ½ΞΏΟ…Ο‚ Ξ±Ξ½Ξ± Ο€Ο‰Ξ»Ξ·Ο„Ξ®
+	//Συνολικό Μπόνους ανα πωλητή
 	public double ExtraSalary() {
 		return this.Bonus() + this.Commission();
 	}
