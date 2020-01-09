@@ -32,7 +32,8 @@ public class Main_DB {
 			rs1 = stmt1.executeQuery("SELECT * FROM Salesman");
 			while (rs1.next()) {
 				Username=rs1.getString("Username");
-			    salary=rs1.getFloat("salary");
+			        salary=rs1.getFloat("salary");
+				System.out.println(Username + " " + salary);   /* Print all salesmen */
 			}
 		    rs1.close();
 		    stmt1.close();
@@ -59,9 +60,10 @@ public class Main_DB {
 			rs2 = stmt2.executeQuery("SELECT * FROM Client");
 			while (rs2.next()) {
 				client_name=rs2.getString("name");
-			    client_lastName=rs2.getString("lastName");
-			    client_age=rs2.getInt("age");
-			    client_address=rs2.getString("address");
+			    	client_lastName=rs2.getString("lastName");
+			    	client_age=rs2.getInt("age");
+			    	client_address=rs2.getString("address");
+				System.out.println(client_name + " " + client_lastName + " " + client_age + " " + client_address);   /* Print all clients */
 			}
 		    rs2.close();
 		    stmt2.close();
@@ -90,6 +92,7 @@ public class Main_DB {
 				client_nameIns=rs3.getString("name");
 				cl_insurance_type=rs3.getInt("insurance_type");
 				cl_insurance_duration=rs3.getInt("insurance_duration");
+				System.out.println(client_nameIns + " " + cl_insurance_type + " " + cl_insurance_duration);   /* Print all clients' insurances */
 			}
 		    rs3.close();
 		    stmt3.close();
