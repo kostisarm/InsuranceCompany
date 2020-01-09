@@ -14,7 +14,7 @@ public class Main_DB {
 		
 
 
-		String url = "jdbc:sqlserver://sqlserver.dmst.aueb.gr:1433;" +
+		String url = "jdbc:sqlserver://195.251.249.161:1433;" +
 	                   "databaseName=DB135;user=G535;password=48tr93905;";
 		Connection dbcon ;
 		Statement stmt1;       /* DataBase returns all Salesmen*/
