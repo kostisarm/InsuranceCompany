@@ -508,4 +508,55 @@ public class Main_DB {
 					System.out.println(e.getMessage());
 					}
 			}
+	
+	
+			System.out.println("Δώσε όνομα πωλητή");
+			String emp_name = sc.nextLine();
+			System.out.println("Δώσε επώνυμο πωλητή");
+			String emp_lastName = sc.nextLine();
+			System.out.println("Δώσε διεύθυνση πωλητή");
+			String emp_address = sc.nextLine();
+			System.out.println("Δώσε αριθμό τηλεφώνου πωλητή");
+			String emp_phoneNumber = sc.nextLine();
+			System.out.println("Δώσε username πωλητή");  /*salesman*/
+			String sman_username = sc.nextLine();
+			System.out.println("Δώσε password πωλητή");
+			String emp_password = sc.nextLine();
+			System.out.println("Δώσε μισθό πωλητή");    /*salesman*/
+			float sman_salary = sc.nextFloat();
+  	
+			public static void Create_Salesman_Employee (String emp_name,String emp_lastName, String emp_address, String emp_phoneNumber, String sman_username, String emp_password, float sman_salary){
+				String url = "jdbc:sqlserver://195.251.249.161:1433;"+
+						"databaseName=DB35;user=G535;password=48tr93905";
+				Connection dbcon;
+				Statement stmt1;
+				Statement stmt2;
+
+				try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");}
+				catch(java.lang.ClassNotFoundException e)
+				{System.out.print("ClassNotFoundException: ");
+				System.out.println(e.getMessage());}
+
+				try {
+					dbcon = DriverManager.getConnection(url);
+					stmt1 = dbcon.createStatement();
+					stmt2 = dbcon.createStatement();
+
+					String sql1 = "INSERT INTO Employee VALUES ("+emp_name+","+emp_lastName+","+emp_address+","+emp_phoneNumber+
+							","+sman_username+","+emp_password+");"; 
+					stmt1.executeUpdate(sql1);
+
+				    String sql2 = "INSERT INTO Salesman VALUES ("+sman_username+","+sman_salary+");"; 
+				    stmt2.executeUpdate(sql2);
+
+				    stmt1.close(); 
+				    stmt2.close();
+				}
+				catch(SQLException e)
+				{
+				System.out.print("SQLException: ");
+				System.out.println(e.getMessage());}
+
+			}
+
 }
