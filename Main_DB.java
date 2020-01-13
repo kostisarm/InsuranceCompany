@@ -5,10 +5,12 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Main_DB {
+	static float bonus = 4000;
+	static int salesman_counter = 5;//count the salesmen
 	public static void main(String args[]) {
 		String Username, client_name, client_lastName, client_address, client_nameIns;
 		int client_age, cl_insurance_type, cl_insurance_duration;
-		float salary, client_bill, bonus = 1000;
+		float salary, client_bill;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -402,9 +404,9 @@ public class Main_DB {
 	public static float Change_bonus_amount() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Δώσε νέο ποσό bonus");
-		float bonus_amount = sc.nextFloat();
+		bonus = sc.nextFloat();
 		sc.close();
-		return bonus_amount;
+		return bonus;
 	}
 
 	public static float Salesman_ExtraSalary(String username,float bonus_amount) {
@@ -433,6 +435,10 @@ public class Main_DB {
 		return extra_salary;
 	}
 	public static void Print_All_Salaries() {
+		for (int i = 1; i < salesman_counter; i++) { // to update the extra_salary column in the Salesman table   
+			String s_username = String.format("s1%04d", i); //  -"-
+			Salesman_ExtraSalary(s_username,bonus); //  -"-
+		}
 		String url = "jdbc:sqlserver://195.251.249.161:1433;"+
 				"databaseName=DB35;user=G535;password=48tr93905";
 		Connection dbcon;
@@ -509,54 +515,39 @@ public class Main_DB {
 					}
 			}
 	
-	
-			System.out.println("Δώσε όνομα πωλητή");
-			String emp_name = sc.nextLine();
-			System.out.println("Δώσε επώνυμο πωλητή");
-			String emp_lastName = sc.nextLine();
-			System.out.println("Δώσε διεύθυνση πωλητή");
-			String emp_address = sc.nextLine();
-			System.out.println("Δώσε αριθμό τηλεφώνου πωλητή");
-			String emp_phoneNumber = sc.nextLine();
-			System.out.println("Δώσε username πωλητή");  /*salesman*/
-			String sman_username = sc.nextLine();
-			System.out.println("Δώσε password πωλητή");
-			String emp_password = sc.nextLine();
-			System.out.println("Δώσε μισθό πωλητή");    /*salesman*/
-			float sman_salary = sc.nextFloat();
-  	
-			public static void Create_Salesman_Employee (String emp_name,String emp_lastName, String emp_address, String emp_phoneNumber, String sman_username, String emp_password, float sman_salary){
-				String url = "jdbc:sqlserver://195.251.249.161:1433;"+
-						"databaseName=DB35;user=G535;password=48tr93905";
-				Connection dbcon;
-				Statement stmt1;
-				Statement stmt2;
+	public static void Create_Salesman_Employee (String emp_name,String emp_lastName, String emp_address, String emp_phoneNumber, String sman_username, String emp_password, float sman_salary){
+		String url = "jdbc:sqlserver://195.251.249.161:1433;"+
+				"databaseName=DB35;user=G535;password=48tr93905";
+		Connection dbcon;
+		Statement stmt1;
+		Statement stmt2;
 
-				try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");}
-				catch(java.lang.ClassNotFoundException e)
-				{System.out.print("ClassNotFoundException: ");
-				System.out.println(e.getMessage());}
+		try {Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");}
+		catch(java.lang.ClassNotFoundException e)
+		{System.out.print("ClassNotFoundException: ");
+		System.out.println(e.getMessage());}
 
-				try {
-					dbcon = DriverManager.getConnection(url);
-					stmt1 = dbcon.createStatement();
-					stmt2 = dbcon.createStatement();
+		try {
+			dbcon = DriverManager.getConnection(url);
+			stmt1 = dbcon.createStatement();
+			stmt2 = dbcon.createStatement();
 
-					String sql1 = "INSERT INTO Employee VALUES ("+emp_name+","+emp_lastName+","+emp_address+","+emp_phoneNumber+
-							","+sman_username+","+emp_password+");"; 
-					stmt1.executeUpdate(sql1);
+			String sql1 = "INSERT INTO Employee VALUES ("+emp_name+","+emp_lastName+","+emp_address+","+emp_phoneNumber+
+					","+sman_username+","+emp_password+");"; 
+			stmt1.executeUpdate(sql1);
 
-				    String sql2 = "INSERT INTO Salesman VALUES ("+sman_username+","+sman_salary+");"; 
-				    stmt2.executeUpdate(sql2);
+		    String sql2 = "INSERT INTO Salesman VALUES ("+sman_username+","+sman_salary+");"; 
+		    stmt2.executeUpdate(sql2);
 
-				    stmt1.close(); 
-				    stmt2.close();
-				}
-				catch(SQLException e)
-				{
-				System.out.print("SQLException: ");
-				System.out.println(e.getMessage());}
+		    stmt1.close(); 
+		    stmt2.close();
+		}
+		catch(SQLException e)
+		{
+		System.out.print("SQLException: ");
+		System.out.println(e.getMessage());}
 
-			}
+		salesman_counter++;
+	}
 
 }
