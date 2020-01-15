@@ -53,6 +53,7 @@ b)	Salesman: για σύνδεση ως «Salesman».
 
 *Για επιτυχημένη σύνδεση ως Manager χρησιμοποιήστε τα εξής δεδομένα: Username : m20001
                                                                      Password : mtzi123
+                                                                     
 *Για επιτυχημένη σύνδεση ως Salesman χρησιμοποιήστε τα εξής δεδομένα: Username : s10001
                                                                       Password : apau123
 
